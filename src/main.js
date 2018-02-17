@@ -1,6 +1,5 @@
 import Vue from 'vue';
 import App from './App.vue';
-import Firebase from 'firebase';
 import VueRouter from 'vue-router';
 import { store } from './store/store';
 import { routes } from './router/routes';
@@ -23,7 +22,8 @@ const router = new VueRouter({
 // redirect to the sign-in page to enable them to sign-in
 router.beforeEach((to, from, next) => {
 
-  const currentUser = auth.user.signed;
+  const currentUser = auth.user;
+  console.log('for each');
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser.signed) {
@@ -36,17 +36,11 @@ router.beforeEach((to, from, next) => {
 
 });
 
-// Wrap the vue instance in a Firebase onAuthStateChanged method
-// This stops the execution of the navigation guard 'beforeEach'
-// method until the Firebase initialization ends
 
-// Firebase.auth().onAuthStateChanged(function (user) {
+new Vue({
+  el: '#app',
+  store: store,
+  router: router,
+  render: h => h(App)
+});
 
-  new Vue({
-    el: '#app',
-    store: store,
-    router: router,
-    render: h => h(App)
-  });
-
-// });

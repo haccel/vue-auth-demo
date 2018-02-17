@@ -13,7 +13,7 @@
               <div class="field">
                 <label class="label">Email</label>
                 <div class="control">
-                  <input class="input" type="email" placeholder="joe@bloggs.com" v-model="email">
+                  <input class="input" type="email" placeholder="joe@doe.com" v-model="email">
                 </div>
               </div>
               <div class="field">
@@ -33,6 +33,7 @@
 </template>
 
 <script>
+import auth from '../auth'
 export default {
   data: function() {
     return {
@@ -42,18 +43,14 @@ export default {
   },
   methods: {
     signUp: function() {
-      /*
-      Firebase.auth()
-        .createUserWithEmailAndPassword(this.email, this.password)
-        .then(
-          user => {
-            this.$router.replace('dashboard');
-          },
-          error => {
-            alert(error.message);
-          }
-        );
-        */
+      let res = auth.login(this.email,this.password);
+      if(res){
+        alert(res);
+      }
+      else{
+        console.log('replace dashboard');
+        this.$router.replace("dashboard");
+      }
     }
   }
 };

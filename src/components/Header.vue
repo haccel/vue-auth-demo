@@ -11,6 +11,7 @@
 </template>
 
 <script>
+import auth from '../auth';
 export default {
   computed: {
     user() {
@@ -19,13 +20,13 @@ export default {
   },
   methods: {
     signOut: function() {
-      /*
-      Firebase.auth()
-        .signOut()
-        .then(() => {
+      let err = auth.logout();
+      if(err){
+        alert(err);
+      }
+      else{
           this.$router.replace('sign-in');
-        });
-        */
+      }
     }
   }
 };
