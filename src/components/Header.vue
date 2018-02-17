@@ -19,14 +19,11 @@ export default {
     }
   },
   methods: {
+
     signOut: function() {
-      let err = auth.logout();
-      if(err){
-        alert(err);
-      }
-      else{
+      auth.logout(()=>{
           this.$router.replace('sign-in');
-      }
+      });
     }
   }
 };

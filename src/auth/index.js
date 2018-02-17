@@ -6,21 +6,26 @@ export default {
         signed : false,
         name: ''
     },
-    // returns error or null
-    login( email , password  ){
+    login( email , password , ok , err  ){
         console.log( 'login %s:%s' , email , password )
-        this.user.name = 'hacc';
-        this.user.signed = true;
-        return null;
+        setTimeout( ()=>{
+            this.user.name = 'hacc';
+            this.user.signed = true;
+            ok();
+        }
+             , 1000 );
     },
-    signup( email , password ){
+    signup( email , password , ok , err ){
         console.log( 'signup %s' , email )
-        return this.login(email,password);
+        this.login(email,password,ok,err);
     },
-    logout(  ){
+    logout( ok , err ){
         console.log('sign out');
-        this.user.signed = false;
-        return null;
+        setTimeout( ()=>{
+            this.user.signed = false;
+            ok();
+        } 
+            , 1000 );
     }
 
 

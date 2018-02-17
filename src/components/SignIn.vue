@@ -43,14 +43,14 @@ export default {
   },
   methods: {
     signIn: function() {
-      let res = auth.login(this.email,this.password);
-      if(res){
-        alert(res);
-      }
-      else{
-        console.log('replace dashboard');
-        this.$router.replace("dashboard");
-      }
+      auth.login(this.email,this.password,
+        ()=>{
+          this.$router.replace("dashboard");
+        },
+        ()=>{
+          alert(res);
+        }
+      );
     }
   }
 };
