@@ -11,7 +11,6 @@
 </template>
 
 <script>
-
 export default {
   computed: {
     user() {
@@ -20,8 +19,13 @@ export default {
   },
   methods: {
     signOut: function() {
-      // call this async after signin out
-      this.$router.replace('sign-in');
+      /*
+      Firebase.auth()
+        .signOut()
+        .then(() => {
+          this.$router.replace('sign-in');
+        });
+        */
     }
   }
 };

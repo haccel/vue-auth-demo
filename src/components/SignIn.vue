@@ -42,8 +42,18 @@ export default {
   },
   methods: {
     signIn: function() {
-      // do sign in
-      this.$router.replace('dashboard');
+      /*
+      Firebase.auth()
+        .signInWithEmailAndPassword(this.email, this.password)
+        .then(
+          user => {
+            this.$router.replace("dashboard");
+          },
+          error => {
+            alert(error.message);
+          }
+        );
+        */
     }
   }
 };

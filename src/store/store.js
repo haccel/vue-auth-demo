@@ -14,8 +14,7 @@ export const store = new Vuex.Store({
   },
   mutations: {
     setUser: state => {
-      // do some work
-      state.user = null;
+      state.user = null;//Firebase.auth().currentUser;
     }
   },
   actions: {
