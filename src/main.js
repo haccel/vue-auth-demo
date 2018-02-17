@@ -1,23 +1,9 @@
 import Vue from 'vue';
 import App from './App.vue';
-import Firebase from 'firebase';
 import VueRouter from 'vue-router';
 import { store } from './store/store';
 import { routes } from './router/routes';
 
-// Firebase config - this is provided when you create your app
-// Swap out these settings for your project settings
-const config = {
-  apiKey: "AIzaSyARIllJX5NwVZf9T5brOqhx3dDvLgGZfl8",
-  authDomain: "playing-218ba.firebaseapp.com",
-  databaseURL: "https://playing-218ba.firebaseio.com",
-  projectId: "playing-218ba",
-  storageBucket: "playing-218ba.appspot.com",
-  messagingSenderId: "1092711989826"
-};
-
-// Initialize Firebase
-Firebase.initializeApp(config);
 
 // Set-up and use the Vue Router
 // Pass in your routes and then
@@ -35,7 +21,7 @@ const router = new VueRouter({
 // redirect to the sign-in page to enable them to sign-in
 router.beforeEach((to, from, next) => {
 
-  const currentUser = Firebase.auth().currentUser;
+  const currentUser = null;
   const requiresAuth = to.matched.some(record => record.meta.requiresAuth);
 
   if (requiresAuth && !currentUser) {
@@ -51,13 +37,12 @@ router.beforeEach((to, from, next) => {
 // Wrap the vue instance in a Firebase onAuthStateChanged method
 // This stops the execution of the navigation guard 'beforeEach'
 // method until the Firebase initialization ends
-Firebase.auth().onAuthStateChanged(function (user) {
 
-  new Vue({
-    el: '#app',
-    store: store,
-    router: router,
-    render: h => h(App)
-  });
+// hacc removed
 
+new Vue({
+  el: '#app',
+  store: store,
+  router: router,
+  render: h => h(App)
 });

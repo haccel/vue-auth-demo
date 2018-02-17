@@ -11,7 +11,6 @@
 </template>
 
 <script>
-import Firebase from "firebase";
 
 export default {
   computed: {
@@ -21,11 +20,8 @@ export default {
   },
   methods: {
     signOut: function() {
-      Firebase.auth()
-        .signOut()
-        .then(() => {
-          this.$router.replace('sign-in');
-        });
+      // call this async after signin out
+      this.$router.replace('sign-in');
     }
   }
 };
