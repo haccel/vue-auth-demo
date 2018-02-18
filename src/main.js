@@ -1,15 +1,13 @@
 import Vue from 'vue';
 import App from './App.vue';
 import VueRouter from 'vue-router';
+import VueResource from 'vue-resource';
 import { store } from './store/store';
 import { routes } from './router/routes';
 import auth from './auth'
 
 
-// Set-up and use the Vue Router
-// Pass in your routes and then
-// Set the mode to use history
-// removes # from the URL
+Vue.use(VueResource)
 Vue.use(VueRouter);
 
 const router = new VueRouter({

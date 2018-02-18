@@ -43,12 +43,11 @@ export default {
   },
   methods: {
     signIn: function() {
-      auth.login(this.email,this.password,
+      auth.login(this , this.email,this.password,
         ()=>{
           this.$router.replace("dashboard");
-        },
-        ()=>{
-          alert(res);
+        },err =>{
+          alert(err);
         }
       );
     }

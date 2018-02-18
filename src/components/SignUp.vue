@@ -43,7 +43,7 @@ export default {
   },
   methods: {
     signUp: function() {
-      auth.login(this.email,this.password,
+      auth.login(this , this.email,this.password,
         ()=>{
           this.$router.replace("dashboard");
         },

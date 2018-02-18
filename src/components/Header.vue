@@ -21,7 +21,7 @@ export default {
   methods: {
 
     signOut: function() {
-      auth.logout(()=>{
+      auth.logout(this , ()=>{
           this.$router.replace('sign-in');
       });
     }
