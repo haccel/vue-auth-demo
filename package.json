@@ -5,7 +5,6 @@
   "author": "Gareth Redfern <gareth@garethredfern.com>",
   "private": true,
   "scripts": {
-    "start": "make back",
     "dev": "cross-env NODE_ENV=development webpack-dev-server --open --hot",
     "build": "cross-env NODE_ENV=production webpack --progress --hide-modules"
   },

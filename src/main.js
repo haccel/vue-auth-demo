@@ -8,6 +8,11 @@ import auth from './auth'
 
 
 Vue.use(VueResource)
+//Vue.http.headers.common['Content-Type'] = 'application/json'
+//Vue.http.headers.common['Access-Control-Allow-Origin'] = '*'
+//Vue.http.headers.common['Accept'] = 'application/json, text/plain, */*'
+//Vue.http.headers.common['Access-Control-Allow-Headers'] = 'Origin, Accept, Content-Type, Authorization, Access-Control-Allow-Origin'
+
 Vue.use(VueRouter);
 
 const router = new VueRouter({

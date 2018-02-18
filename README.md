@@ -13,4 +13,4 @@ npm run build
 ```
 
 * https://habrahabr.ru/post/346306/
-
+* https://github.com/oleg-agapov/flask-jwt-auth
