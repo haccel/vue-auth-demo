@@ -1,12 +1,16 @@
 .DS_Store
 node_modules/
 dist/
+migrations/
+backend/.venv/
 npm-debug.log
 yarn-error.log
 
 # Editor directories and files
 .idea
 *.suo
+*.pyc
+*.db
 *.ntvs*
 *.njsproj
 *.sln
