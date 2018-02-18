@@ -1,5 +1,5 @@
 <template>
-  <header>
+  <header class="ui header">
     <nav>
       <router-link to="/" class="button">Home</router-link>
       <router-link to="dashboard" class="button" v-if="user.signed">Dashboard</router-link>
