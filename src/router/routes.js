@@ -3,6 +3,7 @@ import SignIn from '../components/SignIn.vue';
 import SignUp from '../components/SignUp.vue';
 import Error404 from '../components/Error404.vue';
 import Dashboard from '../components/Dashboard.vue';
+import Another from '../components/Another.vue';
 
 // This is where you add all your site routes
 // Each route is set as an obect in the array
@@ -28,6 +29,14 @@ export const routes = [{
     path: '/dashboard',
     name: 'dashboard',
     component: Dashboard,
+    meta: {
+      requiresAuth: true
+    }
+  },
+  {
+    path: '/another',
+    name: 'another',
+    component: Another,
     meta: {
       requiresAuth: true
     }

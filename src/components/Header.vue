@@ -3,6 +3,7 @@
     <nav>
       <router-link to="/" class="button">Home</router-link>
       <router-link to="dashboard" class="button" v-if="user.signed">Dashboard</router-link>
+      <router-link to="another" class="button" v-if="user.signed">Another</router-link>
       <router-link to="sign-in" class="button" v-if="!user.signed">Sign-in</router-link>
       <router-link to="sign-up" class="button" v-if="!user.signed">Sign-up</router-link>
       <a class="button" v-on:click="signOut" v-if="user.signed">Sign-out</a>
